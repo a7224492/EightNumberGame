@@ -33,6 +33,10 @@ private:
 	inline bool isBlankRight(const Card &card);
 	inline void swapCardPos(Card &card1, Card &card2);
 	inline int getCardByPos(int posx, int posy);
+
+	void startAI();
+	void epoch();
+	void updateFitness();
 	
 	SDL_Surface *normalCardImg[CARD_NUM-1];
 	SDL_Surface *activeCardImg[CARD_NUM-1];

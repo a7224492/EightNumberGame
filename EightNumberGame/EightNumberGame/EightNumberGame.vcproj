@@ -185,6 +185,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\genome.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\main.cpp"
 				>
 			</File>
@@ -204,6 +208,10 @@
 			</File>
 			<File
 				RelativePath=".\game.h"
+				>
+			</File>
+			<File
+				RelativePath=".\genome.h"
 				>
 			</File>
 			<File

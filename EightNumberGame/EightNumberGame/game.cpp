@@ -213,3 +213,16 @@ int Game::getCardByPos(int posx, int posy)
 
 	return -1;
 }
+
+void Game::startAI()
+{
+	
+}
+
+void Game::epoch()
+{
+	updateFitness();
+}
+
+void Game::updateFitness()
+{
