@@ -43,13 +43,6 @@ inline double RandomClamped()	   {return RandFloat() - RandFloat();}
 //int to string function
 string itos(int arg);
 
-#define SET_IMG_DISPLAY_RGB(img, r,g,b)\
-	SDL_Surface *(temp##img)= SDL_DisplayFormat(img);\
-	SDL_FreeSurface(img);\
-	img = temp##img;\
-	SDL_SetColorKey(img, SDL_SRCCOLORKEY, SDL_MapRGB(img->format,r,g,b));
-
-
 
 
 #endif

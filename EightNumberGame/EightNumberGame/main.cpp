@@ -9,11 +9,12 @@ using namespace std;
 int main(int argc, char **argv)
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
-	SDL_Surface *screen = SDL_SetVideoMode(600, 600, 24, 0|SDL_SRCCOLORKEY|SDL_DOUBLEBUF);
-	srand(time(NULL));
+	SDL_Surface *screen = SDL_SetVideoMode(600, 620, 24, 0|SDL_SRCCOLORKEY|SDL_DOUBLEBUF);
+	srand((unsigned int)time(NULL));
 	
 	Game game(screen);
 	Drawer drawer(&game);
+	game.setDrawer(&drawer);
 
     bool running = true;
 	while (true)

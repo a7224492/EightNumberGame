@@ -3,16 +3,14 @@
 
 #include <vector>
 
-#define GENOME_LEN 2
-
 using namespace std;
 
 class Genome
 {
 public:
-	Genome(int geneLen);
-
-	int bit[GENOME_LEN];
+	Genome(int len);
+private:
+	vector<int> bits;
 };
 
 #endif
