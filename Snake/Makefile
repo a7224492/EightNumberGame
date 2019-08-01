@@ -1,13 +1,21 @@
 GCC=gcc
-SRC=main.c
 FLAG=-o
-TAR=build/Snake
+TAR=Snake
+OBJS=main.o print.o
 
-all: create_build
-	$(GCC) $(SRC) $(FLAG) $(TAR)
+Snake: create_build $(OBJS)
+	$(GCC) $(OBJS) $(FLAG) $(TAR)
 
-create_build: clean
+main.o: main.c print.o ../common/print.h
+	$(GCC) -c main.c
+
+print.o: ../common/print.c ../common/print.h
+	$(GCC) -c ../common/print.c
+
+create_build:
+	rm build -rf
 	mkdir build
 
 clean:
 	rm build -rf
+	rm $(OBJS)
