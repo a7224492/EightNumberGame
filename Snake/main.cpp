@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <unistd.h>
 #include "defines.h"
 #include "snake.hpp"
+#include "../common/keyboard/key.h"
 
-#include "../common/print.h"
+#include "../common/view/print.h"
 
 // game frame
 void drawFrame() {
@@ -28,13 +30,45 @@ void drawFrame() {
 }
 
 int main(int argc, char **argv) {
+    tty_set();
+
     // clear terminal
     clearAll();
 
     drawFrame();
 
     Snake snake(5,5,4);
+    snake.changeDirection(RIGHT);
+    snake.setV(1);
     snake.draw();
+
+    bool isFinish = false;
+    while (!isFinish) {
+        snake.clearView();
+        snake.move();
+
+        if (kbhit()) {
+            int key = getchar();
+            switch (key) {
+                case 'w':
+                    snake.changeDirection(UP);
+                    break;
+                case 'a':
+                    snake.changeDirection(LEFT);
+                    break;
+                case 'd':
+                    snake.changeDirection(RIGHT);
+                    break;
+                case 's':
+                    snake.changeDirection(DOWN);
+                    break;
+            }
+        } else {
+        }
+
+        snake.draw();
+        sleep(1);
+    }
 
     return 1;
 }

@@ -7,6 +7,7 @@
 #define BLUE 44
 
 void clearAll();
+void clear(int x, int y);
 void show(int x, int y, int color);
 
 #endif

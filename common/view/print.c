@@ -7,7 +7,13 @@ void show(int x, int y, int color) {
     printf("\033[%d;%dH\033[%d;37m  \n", y, realx, color);
 }
 
+void clear(int x, int y)
+{
+    int realx = x * 2;
+    printf("\033[0m\033[%d;%dH  \n", y, realx);
+}
+
 // 清屏
 void clearAll() {
-    printf("\033[2J");
+    printf("\033[2J\n");
 }

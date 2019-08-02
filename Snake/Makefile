@@ -9,8 +9,8 @@ Snake: create_build $(OBJS)
 main.o: main.cpp
 	$(CC) -c -g main.cpp
 
-print.o: ../common/print.c
-	$(CC) -c -g ../common/print.c
+print.o: ../common/view/print.c
+	$(CC) -c -g ../common/view/print.c
 
 snake.o: snake.cpp
 	$(CC) -c -g snake.cpp
