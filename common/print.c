@@ -6,3 +6,8 @@ void show(int x, int y, int color) {
     int realx = x * 2;
     printf("\033[%d;%dH\033[%d;37m  \n", y, realx, color);
 }
+
+// 清屏
+void clearAll() {
+    printf("\033[2J");
+}

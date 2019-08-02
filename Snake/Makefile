@@ -1,16 +1,19 @@
-GCC=gcc
+CC=g++
 FLAG=-o
 TAR=Snake
-OBJS=main.o print.o
+OBJS=main.o print.o snake.o
 
 Snake: create_build $(OBJS)
-	$(GCC) $(OBJS) $(FLAG) $(TAR)
+	$(CC) -g $(OBJS) $(FLAG) $(TAR)
 
-main.o: main.c print.o ../common/print.h
-	$(GCC) -c main.c
+main.o: main.cpp
+	$(CC) -c -g main.cpp
 
-print.o: ../common/print.c ../common/print.h
-	$(GCC) -c ../common/print.c
+print.o: ../common/print.c
+	$(CC) -c -g ../common/print.c
+
+snake.o: snake.cpp
+	$(CC) -c -g snake.cpp
 
 create_build:
 	rm build -rf
@@ -18,4 +21,5 @@ create_build:
 
 clean:
 	rm build -rf
-	rm $(OBJS)
+	rm -f $(OBJS)
+	rm -f $(TAR)
